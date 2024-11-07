@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Object Example</title>
+  </head>
+  <body>
+    <h1>Object Example</h1>
+
+    <script>
+      // Mendefinisikan objek
+      let person = {
+        name: 'Alice',
+        age: 30,
+        city: 'New York',
+        greet: function () {
+          return `Hello, my name is ${this.name} and I am ${this.age} years old.`;
+        },
+      };
+
+      // Mengakses properti objek
+      console.log('Name:', person.name); // Mengakses nama
+      console.log('Age:', person.age); // Mengakses umur
+      console.log('City:', person.city); // Mengakses kota
+
+      // Menggunakan metode objek
+      alert(person.greet()); // Menampilkan pesan sapaan
+    </script>
+  </body>
+</html>

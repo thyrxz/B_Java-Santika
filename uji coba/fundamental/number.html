@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Number Example</title>
+  </head>
+  <body>
+    <h1>Number Example</h1>
+
+    <label for="numberInput">Enter a number:</label>
+    <input type="number" id="numberInput" placeholder="Type a number" />
+    <button onclick="processNumber()">Process Number</button>
+
+    <script>
+      function processNumber() {
+        // Mendapatkan input dari pengguna
+        let inputNumber = Number(document.getElementById('numberInput').value);
+
+        // Melakukan beberapa operasi dasar
+        let doubled = inputNumber * 2; // Menggandakan angka
+        let squared = inputNumber ** 2; // Mengkuadratkan angka
+
+        // Menampilkan hasil
+        alert(`
+                Original Number: ${inputNumber}
+                Doubled: ${doubled}
+                Squared: ${squared}
+            `);
+      }
+    </script>
+  </body>
+</html>

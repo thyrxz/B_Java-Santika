@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Antrian Pembeli</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 20px;
+        padding: 20px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+      }
+      #queue {
+        margin-top: 20px;
+      }
+      .buyer {
+        margin: 5px 0;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Antrian Pembeli</h1>
+    <div id="queue"></div>
+
+    <button onclick="simulateQueue()">Mulai Simulasi</button>
+
+    <script>
+      function simulateQueue() {
+        let queue = ['ray', 'fiki', 'fadhilla', 'farah'];
+        let output = '';
+
+        // Nabila datang
+        queue.push('nabila');
+        output += 'Nabila datang. Antrian: ' + queue.join(', ') + '<br>';
+
+        // Maza dan Elsi datang
+        queue.push('maza', 'elsi');
+        output += 'Maza dan Elsi datang. Antrian: ' + queue.join(', ') + '<br>';
+
+        // Antrian terakhir tidak jadi antri
+        let lastBuyer = queue.pop();
+        output += lastBuyer + ' tidak jadi antri dan pulang ke rumah.<br>';
+
+        // Antrian pertama sudah mendapatkan belanjaannya
+        let firstBuyer = queue.shift();
+        output += firstBuyer + ' sudah mendapatkan belanjaannya.<br>';
+
+        // Antrian kedua sudah mendapatkan belanjaannya
+        let secondBuyer = queue.shift();
+        output += secondBuyer + ' sudah mendapatkan belanjaannya.<br>';
+
+        // Tomi nyerobot antrian
+        queue.unshift('tomi');
+        output += 'Tomi nyerobot antrian. Antrian sekarang: ' + queue.join(', ') + '<br>';
+
+        // Tampilkan hasil akhir
+        output += 'Hasil akhir antrian: ' + queue.join(', ') + '<br>';
+
+        document.getElementById('queue').innerHTML = output;
+      }
+    </script>
+  </body>
+</html>
